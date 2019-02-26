@@ -1,0 +1,206 @@
+$palette-lRed-color: hsl(342,99%,55%);
+$palette-dRed-color: hsl(341,55%,48%);
+$palette-lGreen-color: hsl(73,63%,55%);
+$palette-dGreen-color: hsl(155,87%,36%);
+$palette-lBlue-color: hsl(193,79%,62%);
+$palette-dBlue-color: hsl(190,50%,47%);
+$palette-orange-color: hsl(7,71%,55%);
+$palette-purple-color: hsl(254,87%,62%);
+$accent-color: hsl(169,64%,60%);
+$shade0-color: hsl(0,0%,75%);
+$shade1-color: hsl(0,0%,60%);
+$shade2-color: hsl(0,0%,50%);
+$shade3-color: hsl(0,0%,30%);
+$shade4-color: hsl(0,0%,20%);
+$shade5-color: hsl(0,0%,10%);
+$common-shadow: 0px 5px 5px hsla(0,0%,0%,0.2);
+$m480p-uniPad: 0 2.5%;
+$m768p-uniPad: 0 5%;
+$m940p-uniPad: 0 7.5%;
+$full-uniPad: 0 10%;
+
+$space-pre-title: 70px;
+$space-post-title: 20px;
+$space-pre-main-content: 40px;
+$space-post-main-content: 70px;
+
+$max-content-width: 1480px;
+
+
+// .wrapper {
+//   max-width: 1480px;
+// }
+// .header__bottom-half {padding: $full-uniPad;}
+.header__bottom-half, .qualities, .commit, .standard-gall, .course-search, .testimonials, .subscribe__wrapper, .footer-categories__wrapper {
+  padding: $full-uniPad;
+}
+.header__top-half, .header__bottom-half, .feature-scroll__content, .qualities, .commit, .standard-gall, .course-search, .testimonials, .subscribe__wrapper, .footer-categories__wrapper {max-width: $max-content-width;}
+
+// .header__top-half, .header__bottom-half {max-width: calc(#{$max-content-width} + 20%);}
+// .header__top-half, .header__bottom-half, .qualities, .commit, .standard-gall, .course-search, .testimonials, .subscribe__wrapper, .footer-categories__wrapper {
+//   max-width: calc(#{$max-content-width} + 20%);
+// }
+// .feature-scroll__content {max-width: $max-content-width;}
+// .feature-scroll__button {max-width: calc(0.1 * #{$max-content-width})}
+.feature-scroll__content {max-width: 1098px;}
+// .feature-scroll__content {max-width: $max-content-width;}
+
+* {
+  font-family: Raleway;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a {text-decoration: none;}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+button, input[type="submit"], input[type="reset"], {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+select {
+  background-color: hsla(0,0%,100%,1);
+  border: none; 
+  border-radius: 3px;
+  color: $shade2-color;
+  padding: 10px 120px 10px 10px;
+  // padding: 10px 15% 10px 10px;
+  margin: 0;      
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image:
+  linear-gradient(45deg, transparent 50%, gray 50%),
+  linear-gradient(135deg, gray 50%, transparent 50%),
+  linear-gradient(to right, #ccc, #ccc);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    calc(100% - 2.5em) 0;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1px 5em;
+  background-repeat: no-repeat;
+}
+
+select:focus {
+  background-image:
+    linear-gradient(45deg, $accent-color, transparent 50%),
+    linear-gradient(135deg, transparent 50%, $accent-color),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position:
+    calc(100% - 15px) 1em,
+    calc(100% - 20px) 1em,
+    calc(100% - 2.5em) 0;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1px 5em;
+  background-repeat: no-repeat;
+  border-color: green;
+  outline: 0;
+}
+
+select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+
+// html {min-width: 430px;}
+
+h1, h2, h3, h4, h5, h6 {margin: 0px;}
+h1 {font-size: 3rem; text-transform: uppercase;};
+h2 {font-size: 1.875rem};
+h3 {font-size: 1.375rem};
+h4 {font-size: 1.0625rem; font-weight:500};
+h5 {font-size: 1rem};
+h6 {font-size: 0.875rem;};
+
+.feature-scroll__h4, .qualities__h4, .standard-gall__h6, .testimonials__h6, .qualities__item-p {line-height: 2em;}
+.gall-item__description-text, .testimonials__quote, .footer-categories__text {line-height: 1.5em;}
+.gall-item__img, .qualities__item-icon, [class^=gall-item__title], .gall-item__description-text, [class^=testimonials__name], .testimonials__title {margin-bottom: 0.75em;}
+
+[class^=gall-item__title], .gall-item__description-text, .gall-item__details-text, [class^=testimonials__name], .testimonials__title, .testimonials__quote {text-align: left;}
+
+@mixin divider {
+  border: 0.5px solid $shade4-color;
+  width: 100%;
+  height: 0;
+};
+
+@mixin header__sub-item-link_active ($color) {
+  transition: 0.1s 0s;
+  border-left: 5px solid $color;
+  color: $color !important;
+  padding-left: 10px;
+}
+
+@mixin header__item-link_active ($color) {
+  transition: 0.1s 0s;
+  color: $color !important;
+}
+
+@mixin footer-categories__link_active ($color) {
+  transition: 0.1s 0s;
+  color: $color !important;
+}
+
+@mixin socials__item_active ($color) {
+  transition: 0.1s 0s;
+  background-color: $color !important;
+}
+
+// do i need this
+@mixin gall-item__title--active ($color) {
+  color: $color 
+}
+
+@mixin common-button {
+  font-size: 18px;
+  border: 2px solid white;
+  border-radius: 3px;
+  color: hsl(0,0%,0%);
+  &:hover {
+    background-color: hsla(0,0%,0%,0.2);
+  }
+};
+
+@mixin gallery-flexbox {
+  display: flex;
+};
+
+@mixin gallery-item {
+  border: 1px solid $shade0-color;
+  &:hover {
+    border: 1px solid $accent-color;
+    background-color: hsla(169,64%,60%,0.2)
+  }
+  // img &other stuff
+};
+
+@mixin continue-link {
+  color: $accent-color;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+};
+
+@mixin students_item($color: $palette-lRed-color) {
+  border: 3px dotted $color;
+    // nestedOtherStuff
+}
+//
